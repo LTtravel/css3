@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fiveRings</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.circle{
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			border-width: 10px;
+			border-style: solid;
+			position: absolute;
+		}
+		.circle:after{
+			content: '';
+			display: block;/*after添加的是行级元素*/
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			border-width: 10px;
+			border-style: solid;
+			position: absolute;
+			top: -10px;
+			left: -10px;
+		}
+		.blue{
+			border-color: blue;
+		}
+		.blue.circle:after{
+			border-color: blue;
+			z-index: 1;
+			border-bottom-color: transparent;
+		}
+		.black{
+			border-color: black;
+			left: 230px;
+
+		}
+		.black.circle:after{
+			border-color: black;
+			z-index: 1;
+			border-left-color: transparent;
+		}
+		.red{
+			border-color: red;
+			left: 460px;
+		}
+		.red.circle:after{
+			border-color: red;
+			z-index: 1;
+			border-left-color: transparent;
+		}
+		.yellow{
+			border-color: yellow;
+			left: 110px;
+			top: 100px;
+		}
+		.yellow.circle:after{
+			border-color: yellow;
+		}
+		.green{
+			border-color: green;
+			left: 340px;
+			top: 100px;
+		}
+		.green.circle:after{
+			border-color: green;
+			z-index: 1;
+			border-top-color: transparent;
+			border-right-color: transparent;
+		}
+	</style>
+</head>
+<body>
+	<div class="circle blue"></div>
+	<div class="circle black"></div>
+	<div class="circle red"></div>
+	<div class="circle yellow"></div>
+	<div class="circle green"></div>
+</body>
+</html>

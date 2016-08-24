@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>clock</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul,ol{
+			list-style: none;
+		}
+		#dial li{
+			height: 6px;
+			width: 2px;
+			background: #000;
+			position: absolute;
+			left: 149px;
+			-webkit-transform-origin:0px 150px;
+		}
+		#clock{
+			height: 300px;
+			width: 300px;
+			border: 1px solid #000;
+			border-radius: 50%;
+			margin: 100px auto;
+			position: relative;
+			background: url('cat.jpg')no-repeat 60px 80px;
+			-webkit-perspective:800px;
+		}
+		#dial li:nth-child(5n+1){
+			height: 14px;
+			width: 2px;
+		}
+		#hour,#minute,#second{
+			position: absolute;
+		}
+		#hour{
+			height: 50px;
+			width: 4px;
+			background: #000;
+			top: 150px;
+			left: 148px;
+		}
+		#minute{
+			height: 90px;
+			width: 5px;
+			background: #000;
+			top: 150px;
+			left: 148px;
+		}
+		#second{
+			height: 120px;
+			width: 2px;
+			background: red;
+			top: 150px;
+			left: 149px;
+		}
+	</style>
+</head>
+<body>
+	<div id="clock">
+		<ul id="dial"></ul>
+		<div id="hour"></div>
+		<div id="minute"></div>
+		<div id="second"></div>
+	</div>
+	<script>
+		var oClock = document.getElementById('clock');
+		var oDial = document.getElementById('dial');
+		var oHour = document.getElementById('hour');
+		var oMinute = document.getElementById('minute');
+		var oSecond = document.getElementById('second');
+		for(var i=0; i<60; i++){
+			var oLi = document.createElement('li');
+			oDial.appendChild(oLi);
+			oLi.style.webkitTransform = 'rotate(' + i * 6 + 'deg)';
+		}
+		function rotate(){
+			var date = new Date();
+			var hour = date.getHours(),
+			minute = date.getMinutes(),
+			second = date.getSeconds();
+			console.log(123);
+			oHour.style.webkitTransformOrigin = 'top';
+			oHour.style.webkitTransform = 'rotate('+ (hour * 30 + minute * 0.5 + second * 0.1 + 180) +'deg)';
+			oMinute.style.webkitTransformOrigin = 'top';
+			oMinute.style.webkitTransform = 'rotate('+ (minute * 6 + second * 0.1 + 180) +'deg)';
+			oSecond.style.webkitTransformOrigin = 'top';
+			oSecond.style.webkitTransform = 'rotate('+ (second * 6 + 180) +'deg)';
+		}
+		rotate();
+		setInterval(rotate,1000);
+	</script>
+</body>
+</html>

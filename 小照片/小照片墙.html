@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>小照片墙</title>
+	<meta charset="UTf-8">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #fcc;
+		}
+		#main img{
+			height: 300px;
+			width: 460px;
+			border: 10px solid #96f;
+			position: absolute;
+			-webkit-box-shadow:5px 5px 5px rgba(50,50,50,.5);
+			-moz-box-shadow:5px 5px 5px rgba(50,50,50,.5);
+			-ms-box-shadow:5px 5px 5px rgba(50,50,50,.5);
+			-o-box-shadow:5px 5px 5px rgba(50,50,50,.5);
+			box-shadow:5px 5px 5px rgba(50,50,50,.5);
+			-webkit-transition:all 2s ease 0s;
+			-moz-transition:all 2s ease 0s;
+			-ms-transition:all 2s ease 0s;
+			-o-transition:all 2s ease 0s;
+			transition:all 2s ease 0s;
+		}
+		#main img:nth-child(1){
+			-webkit-transform:rotate(20deg);
+			-moz-transform:rotate(20deg);
+			-ms-transform:rotate(20deg);
+			-o-transform:rotate(20deg);
+			transform:rotate(20deg);
+		}
+		#main img:nth-child(2){
+			-webkit-transform:rotate(-20deg);
+			-moz-transform:rotate(-20deg);
+			-ms-transform:rotate(-20deg);
+			-o-transform:rotate(-20deg);
+			transform:rotate(-20deg);
+		}
+		#main{
+			margin: 200px auto;
+			width: 500px;
+			height: 340px;
+		}
+		#main img:hover{
+			z-index: 1;
+			-webkit-transform:rotate(0deg);
+			-moz-transform:rotate(0deg);
+			-ms-transform:rotate(0deg);
+			-o-transform:rotate(0deg);
+			transform:rotate(0deg);
+			-webkit-transform:scale(1.5);
+			-moz-transform:scale(1.5);
+			-ms-transform:scale(1.5);
+			-o-transform:scale(1.5);
+			transform:scale(1.5);
+			-webkit-transition:all 2s ease 0s;/*过渡动画效果：属性 动画执行时间 动画效果 动画的延迟时间*/
+			-moz-transition:all 2s ease 0s;
+			-ms-transition:all 2s ease 0s;
+			-o-transition:all 2s ease 0s;
+			transition:all 2s ease 0s;
+			-webkit-box-shadow:10px 10px 10px rgba(50,50,50,.5);
+			-moz-box-shadow:10px 10px 10px rgba(50,50,50,.5);
+			-ms-box-shadow:10px 10px 10px rgba(50,50,50,.5);
+			-o-box-shadow:10px 10px 10px rgba(50,50,50,.5);
+			box-shadow:10px 10px 10px rgba(50,50,50,.5);
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<img src="5.jpg">
+		<img src="6.jpg">
+	</div>
+</body>
+</html>

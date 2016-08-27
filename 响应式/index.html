@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>响应式</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width = device-width"/>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		img{
+			border: 0px;
+		}
+		h3{
+			width: 960px;
+			height: 100px;
+			background: #ccc;
+			text-align: center;
+			line-height: 100px;
+			margin: 30px auto;
+		}
+		#banner{
+			height: 600px;
+			width: 960px;
+			background: url('img/6.jpg');
+			margin: 0 auto;
+			background-size: cover;
+		}
+		#left,#right{
+			height: 200px;
+			display: table;
+		}
+		#left{
+			background-color: green;
+			width: 60%;
+			float: left;
+			margin-right: 5%;	
+		}
+		#left p,#right p{
+			display: table-cell;
+			vertical-align: middle;
+		}
+		#right{
+			background-color: yellow;
+			width: 35%;
+			float: right;
+		}
+		#foot{
+			clear: both;
+			/*margin-top: 30px;*/
+		}
+		#article{
+			width: 960px;
+			margin: 0 auto;
+			
+		}
+		@media screen and (max-width: 960px){
+			h3{
+				width: 100%;
+			}
+			#article{
+				width: 100%;
+			}
+			#banner{
+				width: 100%;
+				height: 0px;
+				padding-top: 62%;/*图片等比例缩放*/
+			}
+		}
+		@media screen and (max-width: 620px){
+			#left,#right{
+				width: 100%;
+			}
+			#banner{
+				background-image: url(6.jpg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h3>页头</h3>
+	</header>
+	<nav>
+		<h3>导航</h3>
+	</nav>
+	<div id="banner"></div>
+	<div id="article">
+		<div id="left">
+			<p>this is left this is left this is left this is left this is left this is left this is left this is left this is left this is left this is left this is left this is left this is left this is left this is left this is left  </p>
+		</div>
+		<div id="right">
+			<p>this is right this is right this is right this is right this is right this is right this is right this is right</p>
+		</div>
+		
+	</div>
+	<footer id="foot">
+		<h3>页尾</h3>
+	</footer>
+</body>
+</html>

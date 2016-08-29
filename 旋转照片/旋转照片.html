@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>旋转照片</title>
+	<meta charset="UTF-8">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			perspective:800px;
+			-webkit-perspective-origin:50% -80%;
+		}
+		#container{
+			width: 125px;
+			height: 125px;
+			margin:200px auto;
+			-webkit-transform-style:preserve-3d;
+			-webkit-transition: all 1s linear;
+		}
+		#container img{
+			width: 125px;
+			height: 125px;
+			position: absolute;
+			-webkit-transition:all 1s linear;
+		}
+	</style>
+</head>
+<body>
+	<div id="container"></div>
+	<script>
+		var oContainer = document.getElementById('container');
+		var count = 0;
+		var index = 1;
+		for(var i=0; i<9; i++){
+			var oImg = new Image();
+			oImg.onload = function(){
+				count++;
+				if(count == 9){
+					var aImg = oContainer.querySelectorAll('img');
+						setTimeout(function(){
+							for(var i=0; i<aImg.length; i++){
+								aImg[i].style.WebkitTransform = 'rotateY(' + (i * 40) + 'deg) translateZ(200px)';
+							}
+						},100);
+					
+				}
+			};
+			oImg.src = 'img/' + (i + 1) + '.jpg' ;
+			oContainer.appendChild(oImg);
+			// oImg.style.WebkitTransform = 'rotateY('+ i * 40 +'deg) translateZ(200px)';
+		}
+		
+		oContainer.addEventListener('click', function(){
+			oContainer.style.WebkitTransform = 'rotateY(' + (40 * index) + 'deg)';
+			index++;
+		});
+	</script>
+</body>
+</html>

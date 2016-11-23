@@ -1,0 +1,23 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul,ol{
+	list-style: none;
+}
+body{
+	background: #000;
+}
+img{
+	border: 0;
+}
+#container{
+	margin: 100px auto;
+	color: #fff;
+	height: 300px;
+	width: 500px;
+}
+#prompt li{
+	float: left;
+	margin-right: 20px;
+}

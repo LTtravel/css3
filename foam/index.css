@@ -17,6 +17,9 @@ img{
 	height: 300px;
 	width: 500px;
 }
+#prompt{
+	margin-top: 100px;
+}
 #prompt li{
 	float: left;
 	margin-right: 20px;
@@ -28,9 +31,31 @@ img{
 	border:5px solid #4b4b4b;
 	background-size: cover;
 	background-position: -30px 0px;
-	background-color: rgba(0,0,0,0.5);
-	/*opacity: 0.8;
-	filter: alpha(opacity=80);*/
+}
+.box{
+	width: 260px;
+	height: 90px;
+	background: #222;
+	position: relative;
+	bottom: 100px;
+	left: 50%;
+	margin-left: -140px;
+	border-radius: 10px 0px;
+	text-align: justify;
+	padding: 10px;
+	font-size: 14px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.box:before{
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-top: 10px solid #222;
+	content: '';
+	position: absolute;
+	bottom: -20px;
+	left: 135px;
 }
 .prompt1{
 	background-image: url('./2.jpg');
@@ -40,4 +65,8 @@ img{
 }
 .prompt3{
 	background-image: url('./6.jpg');
+}
+.box:hover{
+	opacity: 1;
+	transition: all 1.5s ease-in 0s;
 }

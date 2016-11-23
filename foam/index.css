@@ -21,3 +21,23 @@ img{
 	float: left;
 	margin-right: 20px;
 }
+.prompt_p{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border:5px solid #4b4b4b;
+	background-size: cover;
+	background-position: -30px 0px;
+	background-color: rgba(0,0,0,0.5);
+	/*opacity: 0.8;
+	filter: alpha(opacity=80);*/
+}
+.prompt1{
+	background-image: url('./2.jpg');
+}
+.prompt2{
+	background-image: url('./5.jpg');
+}
+.prompt3{
+	background-image: url('./6.jpg');
+}

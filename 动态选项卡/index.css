@@ -1,0 +1,23 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+img{
+	border: 0;
+}
+ol,ul{
+	list-style: none;
+}
+.wraper{
+	width: 80%;
+	margin: 100px auto;
+}
+h1,#tit{
+	text-align: center;
+}
+#tit{
+	word-spacing: 10px;
+	letter-spacing: 5px;
+	font-weight: bold;
+	margin-top: 30px;
+}

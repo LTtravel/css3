@@ -25,11 +25,13 @@ h1,#tit{
 	width: 80px;
 	height: 30px;
 	line-height: 30px;
-	background-repeat: no-repeat;
-	background-size: contain;
-	text-indent: 40px;
 }
-li:nth-child(1){
+#tab li img{
+	height: 30px;
+	width: 30px;
+	vertical-align: middle;
+}
+/* li:nth-child(1){
 	background-image: url('./img/clock.jpg');
 }
 li:nth-child(2){
@@ -43,4 +45,4 @@ li:nth-child(4){
 }
 li:nth-child(5){
 	background-image: url('./img/bubble.jpg');
-}
+} */

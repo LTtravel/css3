@@ -1,3 +1,4 @@
+/*全局布置*/
 *{
 	margin: 0;
 	padding: 0;
@@ -12,6 +13,7 @@ ol,ul{
 	width: 80%;
 	margin: 100px auto;
 }
+/*正标题和副标题*/
 h1,#tit{
 	text-align: center;
 }
@@ -21,15 +23,27 @@ h1,#tit{
 	font-weight: bold;
 	margin-top: 20px;
 }
+/*导航*/
 #tab li{
 	width: 80px;
 	height: 30px;
 	line-height: 30px;
+	text-align: center;
+	font-weight: bolder;
+	float: left;
+	background: #ccc;
+	margin-right: 5px;
+	border-radius: 10px 10px 0px 0px;
 }
 #tab li img{
 	height: 30px;
 	width: 30px;
 	vertical-align: middle;
+	display: none;
+}
+#tab li:hover img,#tab li:hover{
+	display: inline-block;
+	background: #fff;
 }
 /* li:nth-child(1){
 	background-image: url('./img/clock.jpg');

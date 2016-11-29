@@ -73,12 +73,7 @@ img{
 .prompt3{
 	background-image: url('./6.jpg');
 }
-.prompt_p:hover{
-	opacity: 1;
+.prompt_p:hover,.prompt_p:hover .box{
 	border-color: #fff;
-}
-.box:hover{
 	opacity: 1;
-	border-color: #fff;
-	
 }

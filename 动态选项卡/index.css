@@ -24,7 +24,11 @@ h1,#tit{
 	margin-top: 20px;
 }
 /*导航*/
-#tab li{
+.tab{
+	height: 30px;
+	margin-top: 20px;
+}
+.tab li{
 	width: 80px;
 	height: 30px;
 	line-height: 30px;
@@ -35,15 +39,52 @@ h1,#tit{
 	margin-right: 5px;
 	border-radius: 10px 10px 0px 0px;
 }
-#tab li img{
+.tab li img{
 	height: 30px;
 	width: 30px;
 	vertical-align: middle;
 	display: none;
 }
-#tab li:hover img,#tab li:hover{
-	display: inline-block;
+.tab li:hover img,#tab li:hover{
+	opacity: 1;
+	text-indent: 32px;
 	background: #fff;
+}
+.tab li.choose{
+	background: #fff;
+	text-indent: 32px;
+}
+/*导航详细说明*/
+#content li:nth-child(1){
+	clear: both;
+}
+#content{
+	position: relative;
+	padding-top: 20px;
+	min-height: 144px;
+	color: #607291;
+	background: #f9f9f9;
+	box-shadow: 2px 2px 2px #5c5c5c;
+}
+#content li{
+	min-height: 144px;
+	border-bottom: 1px solid #ededed;
+	margin-right: 10px;
+	/*每次显示一个详述*/
+	position: absolute;
+	background: #f9f9f9;/*加背景后，不显示下层的文字*/
+	top: 20px;
+	left:15px;
+}
+#content li.active{
+	z-index: 10;/*设置该内容在最上层*/
+}
+#content li img{
+	float: left;/*文字在图片右侧*/
+	margin-right: 20px;/*文字与图片之间间隔*/
+}
+#content li h3{
+	margin-bottom: 20px;/*小标题与详述的间隔*/
 }
 /* li:nth-child(1){
 	background-image: url('./img/clock.jpg');

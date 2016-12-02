@@ -45,11 +45,11 @@ h1,#tit{
 	vertical-align: middle;
 	display: none;
 }
-.tab li:hover img,#tab li:hover{
+/* .tab li:hover img,#tab li:hover{
 	opacity: 1;
 	text-indent: 32px;
 	background: #fff;
-}
+} */
 .tab li.choose{
 	background: #fff;
 	text-indent: 32px;

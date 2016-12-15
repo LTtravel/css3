@@ -4,15 +4,31 @@
 	<meta charset="UTF-8">
 	<title>video</title>
 	<style>
-		#video1{
+		.video1{
 			width: 400px;
 			height: 400px;
 		}
 	</style>
 </head>
 <body>
-	<video id="video1" src="..\..\..\JS_Xie\ReactJs\1_react.mp4" controls="controls" type="video/mp4">
-		
+	<!-- <video class="video1" src="1_react.mp4" controls="controls" type="video/mp4">
+		您的浏览器不支持video标签
+	</video> -->
+	<video controls class="video1">
+		<source src="1_react.mp4" type="video/mp4">
+		<source src="2_react1.mp4" type="video/mp4">
+		您的浏览器不支持video标签
 	</video>
+	
+	<script>
+		function loadNewVideo(){
+			var video = document.getElementsByTagName('video')[0];
+			var sources = video.getElementsByTagName('source');
+			sources[0].src = '1_react.mp4';
+			sources[1].src = '2_react1.mp4';
+			video.load();
+		}
+	</script>
+	<input type="button" value="load new video" onclick="loadNewVideo()" />
 </body>
 </html>

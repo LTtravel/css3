@@ -25,6 +25,7 @@
 			var video = document.getElementsByTagName('video')[0];
 			var sources = video.getElementsByTagName('source');
 			sources[0].src = '1_react.mp4';
+			// 第一个视频无法播放时，第二个视频可以播放!!
 			sources[1].src = '2_react1.mp4';
 			video.load();
 		}

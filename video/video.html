@@ -4,17 +4,31 @@
 	<title>pause video</title>
 	<meta charset="UTF-8">
 	<style>
-		.video1{
+		#video1{
 			width: 400px;
 			height: 400px;
 		}
 	</style>
 </head>
 <body>
-	<video controls class="video1">
-		<source src="..\..\..\JS_Xie\ReactJs\1_react.mp4" type="video/mp4">
-		<source src="..\..\..\JS_Xie\ReactJs\2_react1.mp4" type="video/mp4">
+	<video controls id="video1">
+		<source src="1_react.mp4" type="video/mp4">
+		<source src="2_react1.mp4" type="video/mp4">
 		您的浏览器不支持video标签
 	</video>
+	<button id="toggle" onclick="toggleSound()">播放</button>
+	<script>
+		function toggleSound(){
+			var video1 = document.getElementById("video1");
+			var toggle = document.getElementById("toggle");
+			if(video1.paused){
+				video1.play();
+				toggle.innerHTML = "暂停";
+			}else{
+				video1.pause();
+				toggle.innerHTML = "播放";
+			}
+		}
+	</script>
 </body>
 </html>

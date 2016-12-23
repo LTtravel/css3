@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>视频帧画面</title>
+</head>
+<body>
+	<video id="moives" autoplay oncanplay="startVideo()" onended="stopTimelne()" autobuffer="true" width="300px" height="300px">
+		<source src="..\..\..\JS_Xie\ReactJs\1_react.mp4" type="video/mp4">
+		<source src="..\..\..\JS_Xie\ReactJs\2_react1.mp4" type="video/mp4">
+		您的浏览器不支持video标签
+	</video>
+	<canvas id="timeline" width="400px" height="400px" />
+	<script type="text/javascript">
+		(function(){
+			// 时间间隔
+			var updateInterval = 5000;
+			//抓取画面显示大小
+			var frameWidth = 100;
+			var frameHeight = 75;
+			//行列数
+			var frameRows = 4;
+			var frameColumns = 4;
+			var frameGrid = frameRows * frameColumns;
+			var frameCounts = 0;
+			//定义播放器完毕取消定时器
+			var intervalId;
+			var videoStarted = false;
+			function updateFrame(){
+				var video = document.getElementById("moives");
+				var timeline = document.getElementById("timeline");
+				var ctx = timeline.getContext('2d');
+			}
+		})();
+	</script>
+</body>
+</html>

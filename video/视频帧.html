@@ -26,10 +26,24 @@
 			//定义播放器完毕取消定时器
 			var intervalId;
 			var videoStarted = false;
-			function updateFrame(){
+			function updateFrame(){//抓取帧画面绘制到画布上
 				var video = document.getElementById("moives");
 				var timeline = document.getElementById("timeline");
+				// 获取canvas的二维上下文对象
 				var ctx = timeline.getContext('2d');
+				var framePosition = frameCounts % frameGrid;
+				var frameX = (framePosition % frameColumns) * frameWidth;
+				var frameY = (Math.floor(framePosition / frameRows)) * frameHeight;
+				ctx.drawImage(video,0,0,400,300,frameX,frameY,frameWidth,frameHeight);
+				frameCounts++;
+			}
+			var timeline = document.getElementById("timeline");
+			timeline.onclick = function(evt){
+				var offX = evt.layerX - timeline.offsetLeft;
+				var offY = evt.layerY - timeline.offsetTop;
+				var clickedFrame = Math.floor(offY / frameHeight) * frameRows;
+				clickedFrame += Math.floor(offX / frameWidth);
+				
 			}
 		})();
 	</script>

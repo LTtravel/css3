@@ -6,46 +6,64 @@
 </head>
 <body>
 	<video id="moives" autoplay oncanplay="startVideo()" onended="stopTimelne()" autobuffer="true" width="300px" height="300px">
-		<source src="..\..\..\JS_Xie\ReactJs\1_react.mp4" type="video/mp4">
-		<source src="..\..\..\JS_Xie\ReactJs\2_react1.mp4" type="video/mp4">
+		<source src="1_react.mp4" type="video/mp4">
+		<source src="2_react1.mp4" type="video/mp4">
 		您的浏览器不支持video标签
 	</video>
 	<canvas id="timeline" width="400px" height="400px" />
 	<script type="text/javascript">
-		(function(){
-			// 时间间隔
-			var updateInterval = 5000;
-			//抓取画面显示大小
-			var frameWidth = 100;
-			var frameHeight = 75;
-			//行列数
-			var frameRows = 4;
-			var frameColumns = 4;
-			var frameGrid = frameRows * frameColumns;
-			var frameCounts = 0;
-			//定义播放器完毕取消定时器
-			var intervalId;
-			var videoStarted = false;
-			function updateFrame(){//抓取帧画面绘制到画布上
-				var video = document.getElementById("moives");
-				var timeline = document.getElementById("timeline");
-				// 获取canvas的二维上下文对象
-				var ctx = timeline.getContext('2d');
-				var framePosition = frameCounts % frameGrid;
-				var frameX = (framePosition % frameColumns) * frameWidth;
-				var frameY = (Math.floor(framePosition / frameRows)) * frameHeight;
-				ctx.drawImage(video,0,0,400,300,frameX,frameY,frameWidth,frameHeight);
-				frameCounts++;
+		// 时间间隔
+		var updateInterval = 5000;
+		//抓取画面显示大小
+		var frameWidth = 100;
+		var frameHeight = 75;
+		//行列数
+		var frameRows = 4;
+		var frameColumns = 4;
+		var frameGrid = frameRows * frameColumns;
+		var frameCounts = 0;
+		//定义播放器完毕取消定时器
+		var intervalId;
+		var videoStarted = false;
+		function startVideo(){
+			console.log(000);
+			if(videoStarted){
+				return;
 			}
+			updateFrame();
+			intervalId = setInterval(updateFrame,updateInterval);
 			var timeline = document.getElementById("timeline");
 			timeline.onclick = function(evt){
 				var offX = evt.layerX - timeline.offsetLeft;
 				var offY = evt.layerY - timeline.offsetTop;
 				var clickedFrame = Math.floor(offY / frameHeight) * frameRows;
 				clickedFrame += Math.floor(offX / frameWidth);
-				
+				var seekedFrame = (((Math.floor(frameCounts / frameGrid)) * frameGrid) + clickedFrame);
+				if(clickedFrame > (frameCounts % 16)){
+					seekedFrame -= frameGrid;
+				}
+				if(seekedFrame < 0){
+					return;
+				}
+				var video = document.getElementById("moives");
+				video.currentTime = seekedFrame * updateInterval / 1000;
+				frameCounts = seekedFrame;
 			}
-		})();
+		}
+		function updateFrame(){//抓取帧画面绘制到画布上
+			var video = document.getElementById("moives");
+			var timeline = document.getElementById("timeline");
+			// 获取canvas的二维上下文对象
+			var ctx = timeline.getContext('2d');
+			var framePosition = frameCounts % frameGrid;
+			var frameX = (framePosition % frameColumns) * frameWidth;
+			var frameY = (Math.floor(framePosition / frameRows)) * frameHeight;
+			ctx.drawImage(video,0,0,400,300,frameX,frameY,frameWidth,frameHeight);
+			frameCounts++;
+		}
+		function stopTimeline(){
+			clearInterval(intervalId);
+		}
 	</script>
 </body>
 </html>

@@ -26,7 +26,6 @@
 		var intervalId;
 		var videoStarted = false;
 		function startVideo(){
-			console.log(000);
 			if(videoStarted){
 				return;
 			}
@@ -58,7 +57,7 @@
 			var framePosition = frameCounts % frameGrid;
 			var frameX = (framePosition % frameColumns) * frameWidth;
 			var frameY = (Math.floor(framePosition / frameRows)) * frameHeight;
-			ctx.drawImage(video,0,0,400,300,frameX,frameY,frameWidth,frameHeight);
+			ctx.drawImage(video,0,0,2600,1600,frameX,frameY,frameWidth,frameHeight);
 			frameCounts++;
 		}
 		function stopTimeline(){

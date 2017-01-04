@@ -3,16 +3,41 @@
 <head>
 	<title>画布</title>
 	<meta charset="utf-8">
+	<style>
+		#con{
+			width: 400px;
+			height: 400px;
+			border:1px solid #00f;
+			position: relative;
+			-webkit-transform-origin:center;
+			-webkit-transition:all 4s linear 0s;
+		}
+		#con:hover{
+			-webkit-transform: rotate(360deg);
+		}
+		#myCanvas{
+			position: absolute;
+			top: 100px;
+			left: 100px;
+			-webkit-transform: rotate(0deg);
+			-webkit-transform-origin:center;
+			-webkit-transition:all 2s linear 0s;
+		}
+		#myCanvas:hover{
+			-webkit-transform: rotate(360deg);
+		}
+	</style>
 </head>
 <body>
+	<div id="con"></div>
 	<canvas id="myCanvas" width="300" height="200" style="border:1px solid"></canvas>
 	<script>
-		var canvas = document.getElementById("myCanvas");
-		var context = canvas.getContext("2d");
-		if(canvas.getContext){
-			alert("您的浏览器支持Canvas");
-		}else{
-			alert("您的浏览器不支持Canvas");
+		var con = document.getElementById("con");//外层矩形
+		var canvas = document.getElementById("myCanvas");//画布
+		var context = canvas.getContext("2d"); //矩形框
+		var cxt = canvas.getContext("2d");     //图案
+		function myfn(e){
+			window.event?window.cancelBubble = true: e.stopPropagation();
 		}
 		context.fillStyle = "#ff00ff";
 		context.fillRect(50,55,100,100);

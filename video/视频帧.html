@@ -30,17 +30,23 @@
 				return;
 			}
 			updateFrame();
+			//定义定时器intervalId
 			intervalId = setInterval(updateFrame,updateInterval);
 			var timeline = document.getElementById("timeline");
 			timeline.onclick = function(evt){
+				// layerX相对当前坐标系的border左上角开始的坐标
 				var offX = evt.layerX - timeline.offsetLeft;
 				var offY = evt.layerY - timeline.offsetTop;
+				// 计算哪一位置的帧被单击0~15
 				var clickedFrame = Math.floor(offY / frameHeight) * frameRows;
 				clickedFrame += Math.floor(offX / frameWidth);
+				// 计算视频对应播放到哪一帧
 				var seekedFrame = (((Math.floor(frameCounts / frameGrid)) * frameGrid) + clickedFrame);
+				// 如果单击的帧位于当前帧之前，则设定是上一轮的帧
 				if(clickedFrame > (frameCounts % 16)){
 					seekedFrame -= frameGrid;
 				}
+				// 不允许跳出当前帧
 				if(seekedFrame < 0){
 					return;
 				}

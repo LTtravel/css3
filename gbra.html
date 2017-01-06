@@ -16,10 +16,15 @@
 		}
 		li.rgba1{background: rgba(255,0,0,1);}
 		li.rgba2{background: rgba(255,0,0,0.8);}
-		li.rgba3{background: rgba(255,0,0,0.6);}
+		/*透明度可以省略小数点前的0*/	
+		li.rgba3{background: rgba(255,0,0,.6);}
 		li.rgba4{background: rgba(255,0,0,0.4);}
 		li.rgba5{background: rgba(255,0,0,0.2);}
 		li.rgba6{background: rgba(255,0,0,0);}
+		li[class^="rgb"]{
+			/*给以rgb开头的class定义样式*/
+			border: 1px dotted orange;
+		}
 	</style>
 </head>
 <body>
